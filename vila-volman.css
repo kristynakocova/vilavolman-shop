@@ -224,3 +224,18 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 
 /* spodní lišta s copyrightem – tmavě šedá místo terakotové */
 .footer-bottom-bg::before { background-color: var(--vv-cerna) !important; }
+
+/* tipy na mobilu – Shoptet na telefonu nevytváří swiper, proto mřížka přímo na bloku */
+@media (max-width: 767px) {
+  .homepage-products-6 { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px 16px !important; padding: 0 16px !important; margin: 0 !important; overflow: visible !important; width: 100% !important; max-width: 100% !important; box-sizing: border-box !important; scrollbar-width: none; }
+  .homepage-products-6::-webkit-scrollbar { display: none; }
+  .homepage-products-6 > .product { width: auto !important; min-width: 0 !important; max-width: none !important; margin: 0 !important; padding: 0 !important; flex: none !important; }
+  html body .homepage-products-6 > div.product:nth-child(n+5) { display: none !important; }
+}
+
+/* ---------- ČÁST 4: jemnější písmo popisu produktu (TWK Everett Light z webu vily) ---------- */
+@font-face { font-family: "TWK Everett"; src: url("https://cdn.prod.website-files.com/62ffc9c0c88a2bf8805a90b7/6303a08d959c2070b2df7be7_TWKEverett-Light-web.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+.p-short-description, .p-short-description p, .p-short-description li,
+#description .basic-description, #description .basic-description p, #description .basic-description li { font-weight: 300 !important; line-height: 1.65 !important; color: var(--vv-cerna) !important; }
+#description .basic-description { max-width: 760px; margin: 0 auto; }
+.p-short-description strong, .p-short-description b, #description strong, #description b { font-weight: 700 !important; }
