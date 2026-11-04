@@ -255,3 +255,8 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 @media (min-width: 768px) {
   #carousel .extended-banner-link { margin-top: 25px !important; }
 }
+
+/* hlavní banner na mobilu – jemné tlačítko: bílá tenká linka, slabší písmo, víc místa pod nadpisem */
+@media (max-width: 767px) {
+  #carousel .extended-banner-link { background: transparent !important; color: #fff !important; border: 1px solid rgba(255,255,255,.85) !important; box-shadow: none !important; font-weight: 400 !important; letter-spacing: .06em !important; margin-top: 18px !important; padding: 9px 18px !important; }
+}
