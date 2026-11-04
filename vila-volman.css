@@ -156,7 +156,6 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 }
 
 /* hlavička a menu */
-#header { border-bottom: 1px solid var(--vv-linka); }
 .search input.query-input { border-radius: 999px !important; background: var(--vv-seda) !important; border: 1px solid var(--vv-linka) !important; padding-left: 20px !important; }
 .search button { background: transparent !important; }
 .menu-helper, .menu-helper * { background: var(--vv-bila) !important; box-shadow: none !important; border: 0 !important; }
