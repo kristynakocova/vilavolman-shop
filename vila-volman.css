@@ -1,0 +1,226 @@
+/* =========================================================
+   Vila Volman – vlastní styly e-shopu shop.vilavolman.cz
+   Načítá se z hlavičky. Po každé změně soubor nahrát znovu
+   a v hlavičce zvýšit číslo ?v=
+   ========================================================= */
+
+/* ---------- ČÁST 1: dříve v hlavičce ---------- */
+/* GLOBÁLNÍ */
+html,body{-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}
+*{border-radius:0!important}
+.top-nav-button-login,.responsive-tools a[data-target="login"],#footer .site-name,.splide__pagination,.carousel-indicators,.swiper-pagination,.slick-dots,.custom-footer__contact .contact-box a.btn.btn-primary{display:none!important}
+.product-list .actions .btn,.product .p-actions .btn,.product-list .btn-cart,.product-list .btn-detail{display:block;width:100%;box-sizing:border-box}
+/* FONT:TWK Everett */
+@font-face{font-family:"TWK Everett";font-weight:400;font-style:normal;font-display:swap;src:url("https://cdn.prod.website-files.com/62ffc9c0c88a2bf8805a90b7/6303a08d38e59e7db829ad01_TWKEverett-Regular-web.woff2") format("woff2")}
+@font-face{font-family:"TWK Everett";font-weight:400;font-style:italic;font-display:swap;src:url("https://cdn.prod.website-files.com/62ffc9c0c88a2bf8805a90b7/6303a08d75395177b5d2bafa_TWKEverett-RegularItalic-web.woff2") format("woff2")}
+@font-face{font-family:"TWK Everett";font-weight:700;font-style:normal;font-display:swap;src:url("https://cdn.prod.website-files.com/62ffc9c0c88a2bf8805a90b7/6303a08dde7995c27e64cfe5_TWKEverett-Bold-web.woff2") format("woff2")}
+body,body :not([class*="icon"]):not([class*="ico-"]):not(.fa):not([class^="fa-"]){font-family:"TWK Everett",sans-serif!important}
+/* BANNER */
+.banners-row,.banners-row [class*="col-"]{box-sizing:border-box!important;display:block!important;width:100%!important;max-width:100%!important;margin:0!important;float:none!important}
+.banners-row{padding:0!important}
+.banners-row [class*="col-"]{flex:none!important;padding-left:20px!important;padding-right:20px!important}
+#carousel .carousel-inner{max-height:clamp(320px,50vh,520px)!important;overflow:hidden!important}
+#carousel .item.carousel-item-banner--has-text img{width:100%!important;height:clamp(320px,50vh,520px)!important;object-fit:cover!important;object-position:center!important}
+.carousel-item-banner--has-text a{position:relative!important}
+.extended-banner-texts{position:absolute!important;top:auto!important;bottom:56px!important;left:56px!important;right:auto!important;transform:none!important;margin:0!important;padding:0!important;align-items:flex-start!important;text-align:left!important;max-width:calc(100% - 112px)!important}
+.extended-banner-title,.extended-banner-text{text-align:left!important}
+.extended-banner-title{font-size:clamp(32px,3.6vw,52px)!important;line-height:1.1!important}
+.extended-banner-text{font-size:18px!important}
+.extended-banner-link{display:inline-block!important;background:#fff!important;color:#111!important;padding:14px 32px!important;margin-top:12px!important;font-weight:600!important;text-decoration:none!important;white-space:nowrap!important;transition:background-color .2s,color .2s!important}
+.extended-banner-link:hover{background:#1d1d1d!important;color:#fff!important}
+/* NEWSLETTER */
+.custom-footer__newsletter.footer-item-newsletter{display:grid!important;grid-template-columns:minmax(280px,480px) minmax(280px,480px)!important;justify-content:center!important;align-items:center!important;gap:60px!important;width:100%!important;max-width:100%!important;margin-left:0!important;margin-right:0!important;box-sizing:border-box;padding:30px 20px!important}
+.custom-footer__newsletter.footer-item-newsletter .newsletter-header,.custom-footer__newsletter.footer-item-newsletter form{width:100%!important;max-width:none!important;flex:none!important}
+.custom-footer__newsletter.footer-item-newsletter h3.pageElement__heading{width:100%!important;max-width:100%!important;white-space:normal!important;word-break:break-word!important;font-size:24px!important;line-height:1.2!important;margin-bottom:16px!important}
+.custom-footer__newsletter button.btn.btn-primary{background-color:#f5f7fa!important;color:#1d1d1d!important;border:2px solid #f5f7fa!important;transition:background-color .2s,color .2s}
+.custom-footer__newsletter button.btn.btn-primary:hover{background-color:#1d1d1d!important;color:#f5f7fa!important;border-color:#1d1d1d!important}
+/* PATIČKA */
+.footer-rows{flex-direction:column;align-items:flex-start}
+.custom-footer__contact.footer-item--contact{text-align:left;width:100%;margin-left:0}
+/* KOŠÍK A OBJEDNÁVKA */
+.shipping-options-popup .h1:not(.advanced-order-suggestion),.advanced-order .h1:not(.advanced-order-suggestion){background:#1d1d1d}
+.next-step,.order-summary-top,.order-summary-bottom,.summary-wrapper{background-color:#fff}
+.summary-wrapper{padding:0}
+.order-summary h2,.order-summary .h4,.order-summary h4{color:#1d1d1d}
+body.ordering-process.id--9 .extras-wrapper{align-items:center;flex-wrap:wrap}
+body.ordering-process.id--9 .extras-wrapper .extras-col + .extras-col{width:100%}
+.extras-col{flex:1 1 50%;max-width:50%;margin-left:auto}
+.extras-wrap .extra-content{background:transparent}
+.extras-wrap .extra-item:not(.is-free-shipping) .extra-content{border:1px solid #0f0f0f;background:#fff!important;overflow:hidden}
+.extras-wrap .price-range{background:transparent!important;top:auto!important;bottom:0!important;height:4px!important}
+.extras-wrap .price-range>div{background:#d1664f!important;height:4px!important}
+.extras-wrap .extra.delivery{color:#0f0f0f}
+.quantity .amount{border-color:#0f0f0f}
+.quantity .increase,.quantity .decrease{color:transparent}
+.quantity .increase__sign,.quantity .decrease__sign{display:none!important}
+.quantity .increase::before,.quantity .decrease::before,.quantity .increase::after{content:""!important;position:absolute;left:50%;top:50%;width:14px;height:2px;margin:-1px 0 0 -7px;background:#0f0f0f;font-size:0}
+.quantity .increase::after{width:2px;height:14px;margin:-7px 0 0 -1px}
+.quantity .increase:hover::before,.quantity .decrease:hover::before,.quantity .increase:hover::after{background:#d1664f}
+/* MOBIL */
+@media (max-width:767px){.banners-row [class*="col-"]{padding-left:0!important;padding-right:0!important}
+#carousel .carousel-inner{max-height:none!important}
+#carousel .item.carousel-item-banner--has-text img{height:auto!important}
+.extended-banner-texts{bottom:16px!important;left:16px!important;right:auto!important;max-width:none!important;width:calc(100vw - 32px)!important}
+.extended-banner-texts *{max-width:100%!important;box-sizing:border-box!important}
+.extended-banner-title{font-size:22px!important;line-height:1.1!important;width:100%!important;display:block!important}
+.extended-banner-text{font-size:14px!important;line-height:1.3!important;width:66%!important;display:block!important;white-space:normal!important;margin-top:6px!important}
+.extended-banner-link{width:auto!important;text-align:center!important;box-sizing:border-box!important;font-size:13px!important;padding:10px 18px!important;margin-top:8px!important}
+.custom-footer__newsletter.footer-item-newsletter{grid-template-columns:1fr!important}
+}
+@media (min-width:768px){.discount-coupon-checkbox{display:block}
+body.ordering-process.id--9 .extras-col-basket:not(.is-open) .discount-coupon{display:none}
+.extras-col{flex-wrap:wrap}
+}
+/* KATEGORIE */
+.filters-wrapper,.listItemsTotal,.listSorting__controls li:has(#listSortingControl-bestseller),.listSorting__controls li:has(#listSortingControl-name),.listingControls .pagination,.listingControls .itemsTotal,.listingControls .goToTop{display:none!important}
+.category-perex{border:0!important;padding:0 24px 0 0!important;background:none!important}
+@media (max-width:767px){body.type-category .sidebar-left{display:block!important;width:100%!important;max-width:100%!important;float:none!important;margin:0 0 16px!important}
+.category-perex{padding:0!important}
+.listSorting__controls{flex-wrap:nowrap!important}
+.listSorting__control{padding:8px 10px!important;font-size:12px!important;white-space:nowrap}
+}
+
+/* ---------- ČÁST 2: dříve v zápatí ---------- */
+/* ===== DÁRKOVÉ POUKAZY: varianty jako karty ===== */
+.vv-forma { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 4px 0 16px; }
+.vv-forma button { display: block; text-align: left; cursor: pointer; background: #fff; border: 1px solid #c9c9c9; padding: 12px 14px; font: inherit; color: #0f0f0f; }
+.vv-forma button:hover { border-color: #0f0f0f; }
+.vv-forma button[aria-pressed="true"] { border: 2px solid #0f0f0f; padding: 11px 13px; }
+.vv-nazev { display: block; font-weight: 700; font-size: 15px; }
+.vv-cena { display: block; font-weight: 700; color: #d1664f; margin: 2px 0; }
+.vv-info { display: block; font-size: 13px; color: #444; line-height: 1.35; }
+.vv-skryt { display: none !important; }
+
+/* ===== DÁRKOVÉ POUKAZY: Google hodnocení + recenze ===== */
+.vv-recenze { margin: 18px 0 6px; padding-top: 14px; border-top: 1px solid #e4e4e4; font-size: 13px; line-height: 1.5; color: #444; }
+.vv-google { display: block; line-height: 1.5; color: #0f0f0f; text-decoration: none; font-weight: 700; }
+.vv-google:hover { text-decoration: underline; }
+.vv-hvezdy { color: #d1664f; letter-spacing: 1px; font-size: 15px; }
+.vv-pocet { font-weight: 400; color: #444; }
+.vv-recenze ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
+.vv-recenze li { margin: 0; padding: 10px 12px; background: #f6f4f1; }
+.vv-recenze q { display: block; color: #0f0f0f; quotes: "„" "“"; }
+.vv-kdo { display: block; margin-top: 4px; font-size: 12px; color: #666; }
+
+@media (max-width: 767px) {
+  .vv-google > span { display: block; }
+  .vv-tecka { display: none; }
+  .vv-hvezdy { font-size: 17px; margin-bottom: 2px; }
+}
+@media (max-width: 400px) { .vv-forma { grid-template-columns: 1fr; } }
+
+/* ===== KOŠÍK: bez slevového kupónu, doprava zdarma minimalisticky ===== */
+.extras-col-basket { display: none !important; }
+.extras-wrap .extra-item.is-free-shipping .extra-content { background: #fff !important; border: 1px solid #0f0f0f; }
+.extras-wrap .extra-item.is-free-shipping .extra.delivery strong { color: #d1664f !important; }
+@media (max-width: 767px) {
+  .extras-col { flex: 1 1 100% !important; max-width: 100% !important; margin-left: 0 !important; }
+  .advancedOrder__buttons { gap: 10px; }
+  .advancedOrder__buttons .btn { width: 100% !important; max-width: none !important; margin: 0 !important; justify-content: center !important; }
+  .advancedOrder__buttons .next-step-back { box-shadow: none !important; border: 1px solid #0f0f0f !important; background: #fff !important; }
+}
+@media (min-width: 768px) {
+  body.ordering-process.id--9 .extras-wrapper { align-items: stretch !important; }
+  .extras-wrap { margin: 0 !important; flex: 1 1 auto; display: flex; }
+  .extras-wrap .extra-item { padding: 0 !important; flex: 1 1 auto; display: flex; }
+  .extras-wrap .extra-content { flex: 1 1 auto; }
+}
+
+/* ===== KOŠÍK: kontakt (e-mail a telefon) na jednom řádku ===== */
+.checkout-box-wrapper .contact-box ul { display: flex; flex-wrap: wrap; gap: 4px 28px; margin: 0; }
+.checkout-box-wrapper .contact-box li { margin: 0 !important; }
+
+
+/* ---------- ČÁST 3: nový vzhled úvodní stránky (listopad 2026) ---------- */
+/* ===== MOCKUP 2026: barvy z design systému vilavolman.cz ===== */
+:root { --vv-seda: #f5f7fa; --vv-cerna: #1d1d1d; --vv-terra: #d1664f; --vv-bila: #fff; --vv-linka: #e3e6eb; --vv-text2: #555; }
+
+/* pozadí webu – bílé; šedá z webu vily jen pro zvýrazněné sekce (recenze) */
+body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { background-color: var(--vv-bila) !important; }
+
+/* horní pruh (jen počítač) */
+@media (min-width: 768px) {
+  .top-navigation-bar { display: block !important; height: auto !important; background: var(--vv-cerna) !important; color: var(--vv-seda); }
+  .top-navigation-bar .container { display: flex !important; justify-content: space-between; align-items: center; min-height: 34px; }
+  .top-navigation-bar .site-name, .top-navigation-bar .top-navigation-tools { display: none !important; }
+  .top-navigation-contacts { position: static !important; height: auto !important; top: auto !important; background: none !important; display: flex !important; align-items: center; padding: 0 !important; font-size: 13px !important; color: var(--vv-seda) !important; }
+  .top-navigation-contacts strong { display: inline !important; font-weight: 400 !important; color: var(--vv-seda) !important; margin-right: 6px; }
+  .top-navigation-contacts a, .top-navigation-contacts a span { color: var(--vv-seda) !important; padding: 0 !important; font-size: 13px !important; }
+  .top-navigation-contacts a::before { display: none !important; }
+  .top-navigation-contacts a + a::before { content: "·" !important; display: inline !important; margin: 0 8px; position: static !important; background: none !important; font-size: 13px; }
+  .vv-toplinks { font-size: 13px; color: var(--vv-seda); }
+  .vv-toplinks a { color: var(--vv-seda) !important; text-decoration: none; }
+  .vv-toplinks a:hover { text-decoration: underline; }
+  .vv-toplinks span { margin: 0 8px; }
+}
+
+/* hlavička a menu */
+#header { border-bottom: 1px solid var(--vv-linka); }
+.search input.query-input { border-radius: 999px !important; background: var(--vv-seda) !important; border: 1px solid var(--vv-linka) !important; padding-left: 20px !important; }
+.search button { background: transparent !important; }
+.menu-helper, .menu-helper * { background: var(--vv-bila) !important; box-shadow: none !important; border: 0 !important; }
+#navigation .menu-level-1 > li > a, #navigation .menu-level-1 > li > a b { font-weight: 400 !important; font-size: 14px !important; }
+#navigation .menu-level-1 > li > a { padding: 22px 13px !important; letter-spacing: .06em; }
+#navigation .menu-level-1 > li:first-child > a { padding-left: 0 !important; }
+#navigation .menu-level-1 > li > a[href$="/vanoce/"] { color: var(--vv-terra) !important; }
+#navigation .menu-level-1 > li > a[href$="/vanoce/"], #navigation .menu-level-1 > li > a[href$="/vanoce/"] b { font-weight: 700 !important; }
+
+/* naše tipy na dárky – kulaté dlaždice, 4 v řadě */
+.homepage-products-heading-6 { font-weight: 400 !important; font-size: clamp(28px, 3vw, 40px) !important; margin-bottom: 36px !important; }
+.homepage-products-6 .swiper-wrapper { transform: none !important; display: grid !important; grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 28px; }
+.homepage-products-6 .swiper-slide { width: auto !important; min-width: 0 !important; padding: 0 !important; margin: 0 !important; }
+.homepage-products-6 .swiper-slide > .product { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; flex: none !important; }
+.homepage-products-6 .swiper-slide:nth-child(n+5) { display: none !important; }
+.homepage-products-6 .swiper-arrow, .slider-group-products .swiper-arrow, .homepage-products-6 .swiper-pagination { display: none !important; }
+.homepage-products-6 .p { background: none !important; box-shadow: none !important; padding: 0 0 4px !important; display: flex !important; flex-direction: column; align-items: center; text-align: center; height: 100%; }
+.homepage-products-6 a.image { position: relative; display: block; width: 100%; max-width: 240px; height: auto !important; max-height: none !important; aspect-ratio: 1 / 1; margin: 0 auto 18px !important; border-radius: 50% !important; overflow: hidden; }
+.homepage-products-6 a.image img { position: absolute; left: 0 !important; top: 0 !important; margin: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; max-height: none !important; object-fit: cover; border-radius: 50% !important; transition: transform .4s; }
+.homepage-products-6 .p:hover a.image img { transform: scale(1.05); }
+.homepage-products-6 .flags, .homepage-products-6 .availability, .homepage-products-6 .ratings-wrapper, .homepage-products-6 .p-tools { display: none !important; }
+.homepage-products-6 .p-in { flex: 1 1 auto; display: flex !important; flex-direction: column; justify-content: space-between !important; width: 100%; }
+.homepage-products-6 .p-in-in { display: flex !important; flex-direction: column; }
+.homepage-products-6 .p-in, .homepage-products-6 .p-in-in, .homepage-products-6 .p-bottom, .homepage-products-6 .p-bottom > div, .homepage-products-6 .prices, .homepage-products-6 a.name, .homepage-products-6 a.name span, .homepage-products-6 .price-final { text-align: center !important; justify-content: center !important; align-items: center !important; }
+.homepage-products-6 .p-bottom, .homepage-products-6 .p-bottom > div, .homepage-products-6 .prices { display: block !important; width: 100%; }
+.homepage-products-6 a.name { font-weight: 400 !important; font-size: 17px !important; line-height: 1.3 !important; color: var(--vv-cerna) !important; margin-bottom: 4px; min-height: 0 !important; }
+.homepage-products-6 a.name:hover { text-decoration: underline; }
+.homepage-products-6 .price-final, .homepage-products-6 .price-final strong { color: var(--vv-terra) !important; font-weight: 400 !important; font-size: 16px !important; }
+.homepage-products-6 .product-btn { position: static !important; display: block; margin-top: 14px; text-align: center; }
+.homepage-products-6 .product-btn .btn, .homepage-products-6 .p-bottom .btn { background: transparent !important; color: var(--vv-cerna) !important; border: 1px solid var(--vv-cerna) !important; box-shadow: none !important; min-width: 150px; justify-content: center; }
+.homepage-products-6 .product-btn .btn:hover, .homepage-products-6 .p-bottom .btn:hover { background: var(--vv-terra) !important; border-color: var(--vv-terra) !important; color: var(--vv-bila) !important; }
+
+/* recenze – tmavá sekce */
+.vv-rec { background: var(--vv-seda); color: var(--vv-cerna); padding: 72px 20px 64px; text-align: center; }
+.vv-rec .vv-k { color: var(--vv-terra); letter-spacing: .2em; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+.vv-rec h2 { color: var(--vv-cerna) !important; font-weight: 400 !important; font-size: clamp(28px, 3vw, 40px) !important; margin: 0 0 14px !important; }
+.vv-rec .vv-sc { font-size: 15px; margin-bottom: 40px; }
+.vv-rec .vv-sc a { color: var(--vv-text2) !important; text-decoration: none; }
+.vv-rec .vv-sc a:hover { text-decoration: underline; }
+.vv-rec .vv-st { color: var(--vv-terra); letter-spacing: 3px; font-size: 18px; margin-right: 10px; }
+.vv-rec .vv-grid { max-width: 1160px; margin: 0 auto; display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 4px 18px; text-align: left; scrollbar-width: none; }
+.vv-rec .vv-grid::-webkit-scrollbar { display: none; }
+.vv-rec .vv-grid:focus-visible { outline: 2px solid var(--vv-terra); outline-offset: 6px; }
+.vv-rec figure { flex: 0 0 calc((100% - 48px) / 3); scroll-snap-align: start; margin: 0; background: transparent; border: 1px solid var(--vv-cerna); padding: 36px 38px 30px; display: flex; flex-direction: column; }
+.vv-rec figure::before { content: "“"; color: var(--vv-terra); font-size: 72px; line-height: .6; font-weight: 700; margin-bottom: 22px; display: block; }
+.vv-rec blockquote { margin: 0 0 26px; font-size: 17px; line-height: 1.5; color: var(--vv-cerna); flex: 1; }
+.vv-rec figcaption { display: flex; justify-content: space-between; font-size: 14px; color: var(--vv-text2); }
+.vv-rec figcaption span { color: var(--vv-terra); letter-spacing: 3px; }
+.vv-rec .vv-nav { display: flex; justify-content: center; gap: 12px; margin-top: 28px; }
+.vv-rec .vv-nav button { width: 46px; height: 46px; border: 1px solid var(--vv-cerna); background: transparent; color: var(--vv-cerna); font-size: 20px; line-height: 1; cursor: pointer; }
+.vv-rec .vv-nav button:hover, .vv-rec .vv-nav button:focus-visible { background: var(--vv-terra); border-color: var(--vv-terra); color: var(--vv-bila); outline: none; }
+
+/* patička – nadpis Kontakt a ikony tmavě */
+#footer .custom-footer__contact .pageElement__heading, #footer .custom-footer__contact .pageElement__heading span { color: var(--vv-cerna) !important; }
+#footer .contact-box [class]::before, #footer span.facebook::before, #footer span.instagram::before { color: var(--vv-cerna) !important; }
+
+@media (max-width: 767px) {
+  .homepage-products-6 .swiper-container { width: 100% !important; max-width: 100% !important; padding: 0 16px !important; box-sizing: border-box !important; overflow: hidden !important; }
+  .homepage-products-6 .swiper-wrapper { width: 100% !important; box-sizing: border-box !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px 16px; }
+  .homepage-products-6 a.name { font-size: 15px !important; }
+  .homepage-products-6 .product-btn .btn, .homepage-products-6 .p-bottom .btn { min-width: 0; width: 100%; padding: 0 8px !important; font-size: 13px !important; }
+  .vv-rec { padding: 52px 16px 48px; }
+  .vv-rec .vv-grid { gap: 14px; }
+  .vv-rec figure { flex-basis: 86%; padding: 28px 24px 24px; }
+}
+
+/* spodní lišta s copyrightem – tmavě šedá místo terakotové */
+.footer-bottom-bg::before { background-color: var(--vv-cerna) !important; }
