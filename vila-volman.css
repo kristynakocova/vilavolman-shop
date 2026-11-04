@@ -237,5 +237,11 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 @font-face { font-family: "TWK Everett"; src: url("https://cdn.prod.website-files.com/62ffc9c0c88a2bf8805a90b7/6303a08d959c2070b2df7be7_TWKEverett-Light-web.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
 .p-short-description, .p-short-description p, .p-short-description li,
 #description .basic-description, #description .basic-description p, #description .basic-description li { font-weight: 300 !important; line-height: 1.65 !important; color: var(--vv-cerna) !important; }
-#description .basic-description { max-width: 760px; margin: 0 auto; }
 .p-short-description strong, .p-short-description b, #description strong, #description b { font-weight: 700 !important; }
+
+/* ---------- ČÁST 5: detail produktu – drobečková navigace a „Zeptat se“ v barvách webu ---------- */
+.breadcrumbs, .breadcrumbs a, .breadcrumbs a span, .breadcrumbs .navigation-bullet, .breadcrumbs a::before, .breadcrumbs .navigation-bullet::before { color: var(--vv-text2) !important; }
+.breadcrumbs a:hover, .breadcrumbs a:hover span { color: var(--vv-terra) !important; }
+.breadcrumbs [data-testid="breadcrumbsLastLevel"], .breadcrumbs [data-testid="breadcrumbsLastLevel"] span { color: var(--vv-cerna) !important; }
+.link-icons .link-icon, .link-icons .link-icon span, .link-icons .link-icon::before { color: var(--vv-cerna) !important; }
+.link-icons .link-icon:hover, .link-icons .link-icon:hover span, .link-icons .link-icon:hover::before { color: var(--vv-terra) !important; }
