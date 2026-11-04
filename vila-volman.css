@@ -19,8 +19,8 @@ body,body :not([class*="icon"]):not([class*="ico-"]):not(.fa):not([class^="fa-"]
 .banners-row,.banners-row [class*="col-"]{box-sizing:border-box!important;display:block!important;width:100%!important;max-width:100%!important;margin:0!important;float:none!important}
 .banners-row{padding:0!important}
 .banners-row [class*="col-"]{flex:none!important;padding-left:20px!important;padding-right:20px!important}
-#carousel .carousel-inner{max-height:clamp(320px,50vh,520px)!important;overflow:hidden!important}
-#carousel .item.carousel-item-banner--has-text img{width:100%!important;height:clamp(320px,50vh,520px)!important;object-fit:cover!important;object-position:center!important}
+#carousel .carousel-inner{max-height:clamp(360px,58vh,600px)!important;overflow:hidden!important}
+#carousel .item.carousel-item-banner--has-text img{width:100%!important;height:clamp(360px,58vh,600px)!important;object-fit:cover!important;object-position:center!important}
 .carousel-item-banner--has-text a{position:relative!important}
 .extended-banner-texts{position:absolute!important;top:auto!important;bottom:56px!important;left:56px!important;right:auto!important;transform:none!important;margin:0!important;padding:0!important;align-items:flex-start!important;text-align:left!important;max-width:calc(100% - 112px)!important}
 .extended-banner-title,.extended-banner-text{text-align:left!important}
@@ -245,3 +245,13 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 .breadcrumbs [data-testid="breadcrumbsLastLevel"], .breadcrumbs [data-testid="breadcrumbsLastLevel"] span { color: var(--vv-cerna) !important; }
 .link-icons .link-icon, .link-icons .link-icon span, .link-icons .link-icon::before { color: var(--vv-cerna) !important; }
 .link-icons .link-icon:hover, .link-icons .link-icon:hover span, .link-icons .link-icon:hover::before { color: var(--vv-terra) !important; }
+
+/* ---------- ČÁST 6: hlavní banner – na mobilu bez podnadpisu (jen nadpis + tlačítko) ---------- */
+@media (max-width: 767px) {
+  #carousel .extended-banner-text, #carousel .extended-banner-texts > br { display: none !important; }
+}
+
+/* hlavní banner – tlačítko stejně daleko od podnadpisu jako podnadpis od nadpisu */
+@media (min-width: 768px) {
+  #carousel .extended-banner-link { margin-top: 25px !important; }
+}
