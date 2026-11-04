@@ -19,8 +19,9 @@ body,body :not([class*="icon"]):not([class*="ico-"]):not(.fa):not([class^="fa-"]
 .banners-row,.banners-row [class*="col-"]{box-sizing:border-box!important;display:block!important;width:100%!important;max-width:100%!important;margin:0!important;float:none!important}
 .banners-row{padding:0!important}
 .banners-row [class*="col-"]{flex:none!important;padding-left:20px!important;padding-right:20px!important}
-#carousel .carousel-inner{max-height:clamp(360px,58vh,600px)!important;overflow:hidden!important}
-#carousel .item.carousel-item-banner--has-text img{width:100%!important;height:clamp(360px,58vh,600px)!important;object-fit:cover!important;object-position:center!important}
+#carousel .carousel-inner{overflow:hidden!important}
+#carousel .item.carousel-item-banner--has-text img{width:100%!important;height:auto!important;object-fit:cover!important;object-position:center!important}
+@media (min-width:768px){.banners-row{max-width:1418px!important;margin-left:auto!important;margin-right:auto!important}#carousel .item.carousel-item-banner--has-text img{aspect-ratio:2.31/1}} /* banner jen v šířce obsahu, poměr 2,31:1 jako Kunsthalle */
 .carousel-item-banner--has-text a{position:relative!important}
 .extended-banner-texts{position:absolute!important;top:auto!important;bottom:56px!important;left:56px!important;right:auto!important;transform:none!important;margin:0!important;padding:0!important;align-items:flex-start!important;text-align:left!important;max-width:calc(100% - 112px)!important}
 .extended-banner-title,.extended-banner-text{text-align:left!important}
