@@ -260,3 +260,9 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 @media (max-width: 767px) {
   #carousel .extended-banner-link { background: transparent !important; color: #fff !important; border: 1px solid rgba(255,255,255,.85) !important; box-shadow: none !important; font-weight: 400 !important; letter-spacing: .06em !important; margin-top: 18px !important; padding: 9px 18px !important; }
 }
+
+/* mobil – menší mezera mezi bannerem a „Naše tipy na dárky“ (bylo 90 px, teď 36 px) */
+@media (max-width: 767px) {
+  #carousel { margin-bottom: 0 !important; }
+  .homepage-products-heading-6 { margin-top: 36px !important; margin-bottom: 28px !important; }
+}
