@@ -282,3 +282,36 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 
 /* detail produktu: záložka „Popis“ zarovnaná vlevo s textem popisu */
 .shp-tabs .shp-tab-link { text-align: left !important; padding-left: 60px !important; }
+
+/* detail produktu: „Popis“ odsazený shora stejně jako zleva (60 px), text popisu hned pod ním vlevo nahoře */
+@media (min-width: 768px) {
+  .shp-tabs .shp-tab-link { padding-top: 60px !important; }
+  #description.tab-pane { padding-top: 24px !important; }
+}
+#description .basic-description > :first-child, #description .basic-description > h3:first-child + * { margin-top: 0 !important; }
+
+/* hlavní menu vycentrované; když se nevejde a objeví se „Více“, centruje se v prostoru vedle něj */
+@media (min-width: 768px) {
+  #navigation .navigation-in { position: static !important; width: auto !important; }
+  #navigation .navigation-in > .menu-level-1 { width: auto !important; justify-content: center !important; }
+  #navigation .menu-level-1 > li.splitted { display: none !important; }
+  #navigation .menu-level-1 > li:first-child > a { padding-left: 13px !important; }
+  .navigation-wrapper:has(> .menu-helper.visible) #navigation .navigation-in > .menu-level-1 { padding-right: 110px !important; }
+}
+
+/* ---------- USP pruh pod bannerem (úvodní stránka) ---------- */
+.vv-usp { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1378px; margin: 0 auto; border-top: 1px solid var(--vv-linka); border-bottom: 1px solid var(--vv-linka); }
+.vv-usp-item { display: flex; align-items: center; gap: 16px; padding: 26px 24px; }
+@media (min-width: 768px) { .in-index #carousel { margin-bottom: 0 !important; } .content-wrapper.products-group:has(.vv-usp) { margin-top: 28px !important; } }
+.vv-usp-item + .vv-usp-item { border-left: 1px solid var(--vv-linka); }
+.vv-usp svg { flex: none; width: 34px; height: 34px; stroke: var(--vv-terra); stroke-width: 1.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.vv-usp strong { display: block; font-size: 15px; font-weight: 700; line-height: 1.3; color: var(--vv-cerna); margin-bottom: 4px; }
+.vv-usp span { display: block; font-size: 14px; font-weight: 300; line-height: 1.45; color: var(--vv-text2); }
+@media (max-width: 1100px) { .vv-usp-item { padding: 22px 16px; gap: 12px; } }
+@media (max-width: 767px) {
+  .vv-usp { grid-template-columns: 1fr; margin: 20px 0 0; }
+  .vv-usp-item { padding: 18px 4px; align-items: center; }
+  .vv-usp-item + .vv-usp-item { border-left: 0; border-top: 1px solid var(--vv-linka); }
+  .vv-usp svg { width: 30px; height: 30px; margin-top: 0; }
+  .vv-usp strong { font-size: 15px; margin-bottom: 2px; }
+}

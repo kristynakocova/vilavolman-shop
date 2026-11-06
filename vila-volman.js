@@ -127,6 +127,24 @@
     sec.querySelector('.vv-next').onclick = function () { posun(1); };
   }
 
-  function init() { varianty(); recenze(); texty(); zalozky(); mockup(); }
+  /* ===== USP pruh pod bannerem (úvodní stránka) ===== */
+  var USP = [
+    { ikona: '<path d="M14.5 21.7a.5.5 0 0 0 .9 0l6.5-19a.5.5 0 0 0-.6-.6l-19 6.5a.5.5 0 0 0 0 .9l7.9 3.2a2 2 0 0 1 1.1 1.1z"/><path d="m21.9 2.1-11 11"/>',
+      nadpis: 'E-poukaz ihned e-mailem', text: 'Odesíláme hned po zaplacení' },
+    { ikona: '<rect x="3" y="8" width="18" height="4"/><path d="M12 8v13"/><path d="M19 12v9H5v-9"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C10 3 12 8 12 8s2-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
+      nadpis: 'Tištěný poukaz v dárkové obálce', text: 'Připravený k předání pod stromečkem' },
+    { ikona: '<rect x="3" y="4" width="18" height="18"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m9 16 2 2 4-4"/>',
+      nadpis: 'Platnost do 31. 12. 2027', text: 'Termín návštěvy si obdarovaný vybere sám' }
+  ];
+  function usp() {
+    var nadpis = document.querySelector('.homepage-products-heading-6');
+    if (!nadpis || document.querySelector('.vv-usp')) return;
+    var html = USP.map(function (u) {
+      return '<div class="vv-usp-item"><svg viewBox="0 0 24 24" aria-hidden="true">' + u.ikona + '</svg><div><strong>' + esc(u.nadpis) + '</strong><span>' + esc(u.text) + '</span></div></div>';
+    }).join('');
+    nadpis.parentNode.insertBefore(el('div', 'vv-usp', html), nadpis);
+  }
+
+  function init() { varianty(); recenze(); texty(); zalozky(); mockup(); usp(); }
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
 })();
