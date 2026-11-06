@@ -85,10 +85,14 @@
     nl.querySelectorAll('button, input[type="submit"]').forEach(function (b) { b.textContent = b.value = 'PŘIHLÁSIT'; });
   }
 
+  function zalozky() {
+    document.querySelectorAll('.shp-tab-link[href="#description"], .js-detail-tab-item[data-content="description"]').forEach(function (a) { a.textContent = 'Popis'; });
+  }
+
   /* ===== MOCKUP 2026: horní pruh, nadpis tipů, recenze na úvodní stránce ===== */
   var REC_HP = [
-    { text: 'Dechberoucí vila, dechberoucí průvodkyně. 👌 Doporučuji všem! Naprosto skvostný zážitek.', kdo: 'Věra P.' },
     { text: 'Rozhodně stojí za návštěvu, nás opravdu nadchla. Krásná stavba, výtečně doplněná komentovanou prohlídkou s mladým průvodcem, který byl rozhodně jeden z nejlepších průvodců, se kterými jsme se kdy setkali.', kdo: 'Otakar L.' },
+    { text: 'Dechberoucí vila, dechberoucí průvodkyně. 👌 Doporučuji všem! Naprosto skvostný zážitek.', kdo: 'Věra P.' },
     { text: 'Krásná vila, kdo se zajímá o architekturu, musí být nadšený. My jsme měli skvělou průvodkyni, její výklad byl poutavý a prohlídku jsme si opravdu užili. Při prohlídce máte volnost při prohlížení pokojů a po prohlídce se můžete vrátit ještě na místa, která vás zaujala.', kdo: 'Petra L.' },
     { text: 'Skvělý tip na výlet! Nádherná stavba obklopená anglickým parkem, uvnitř citlivě zrekonstruovaná a plná dechberoucích detailů.', kdo: 'Dita' },
     { text: 'Nádherná a citlivě zrekonstruovaná vila Volman potěší nejedno oko a hlavně duši. Velmi oceňuji, že kromě běžných prohlídek se zde konají i různé další zajímavé akce. Kdybych bydlel blíž, byl bych tu jistě pravidelným návštěvníkem. Velmi doporučuji k návštěvě, klidně i opakované. Já tu naposledy rozhodně nebyl.', kdo: 'Martin K.' }
@@ -123,6 +127,6 @@
     sec.querySelector('.vv-next').onclick = function () { posun(1); };
   }
 
-  function init() { varianty(); recenze(); texty(); mockup(); }
+  function init() { varianty(); recenze(); texty(); zalozky(); mockup(); }
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
 })();
