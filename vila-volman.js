@@ -85,6 +85,13 @@
     nl.querySelectorAll('button, input[type="submit"]').forEach(function (b) { b.textContent = b.value = 'PŘIHLÁSIT'; });
   }
 
+  /* odkazy Shoptetu na neexistující stránku s ochranou osobních údajů → zásady na webu vily */
+  function gdpr() {
+    document.querySelectorAll('a[href="/podminky-ochrany-osobnich-udaju/"]').forEach(function (a) {
+      a.href = 'https://www.vilavolman.cz/cookie'; a.target = '_blank'; a.rel = 'noopener';
+    });
+  }
+
   function zalozky() {
     document.querySelectorAll('.shp-tab-link[href="#description"], .js-detail-tab-item[data-content="description"]').forEach(function (a) { a.textContent = 'Popis'; });
   }
@@ -151,8 +158,8 @@
     poster: 'https://cdn.jsdelivr.net/gh/kristynakocova/vilavolman-shop@ef963ffd71346a496db7407273ff0c3696d6929b/kolaudace-poster.jpg',
     nadtitulek: 'Divadlo ve Volmanově vile',
     titulek: 'Kolaudace',
-    datum: 'Od června 2027',
-    text: 'Nová divadelní inscenace uváděná přímo ve vile. Termíny, obsazení a vstupenky najdete na webu představení.',
+    datum: 'Premiéra 6. června 2027',
+    text: 'Imerzivní inscenace, ve které se hranice mezi divadlem a skutečností téměř vytrácí. Termíny a vstupenky najdete na webu představení.',
     tlacitko: 'Více o představení',
     odkaz: 'https://www.nakolaudaci.cz'
   };
@@ -216,6 +223,6 @@
     dole.parentNode.insertBefore(el('div', 'vv-foot', html), dole);
   }
 
-  function init() { varianty(); recenze(); texty(); zalozky(); mockup(); usp(); promo(); paticka(); }
+  function init() { varianty(); recenze(); texty(); zalozky(); gdpr(); mockup(); usp(); promo(); paticka(); }
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
 })();

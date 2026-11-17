@@ -343,7 +343,7 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 .vv-foot__social a:hover { background: #fff; color: var(--vv-cerna) !important; }
 .vv-foot__social svg { width: 15px; height: 15px; fill: currentColor; }
 .vv-foot__nav { font-size: 14px; font-weight: 700; margin: 0 0 56px; }
-.vv-foot__nav a { color: #fff !important; text-decoration: none; }
+.vv-foot__nav a { color: #fff !important; text-decoration: none; white-space: nowrap; }
 .vv-foot__nav a:hover { text-decoration: underline; }
 .vv-foot__nav span { color: rgba(255,255,255,.5); margin: 0 6px; }
 .vv-foot__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 80px; text-align: left; }
