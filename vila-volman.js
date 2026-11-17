@@ -158,6 +158,7 @@
     poster: 'https://cdn.jsdelivr.net/gh/kristynakocova/vilavolman-shop@ef963ffd71346a496db7407273ff0c3696d6929b/kolaudace-poster.jpg',
     nadtitulek: 'Divadlo ve Volmanově vile',
     titulek: 'Kolaudace',
+    logo: 'https://static.wixstatic.com/media/b85c6b_86951e30d53d4140ab51707b96625dc1~mv2.png',
     datum: 'Premiéra 6. června 2027',
     text: 'Imerzivní inscenace, ve které se hranice mezi divadlem a skutečností téměř vytrácí. Termíny a vstupenky najdete na webu představení.',
     tlacitko: 'Více o představení',
@@ -169,7 +170,7 @@
     var klid = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     var sec = el('section', 'vv-promo',
       '<div class="vv-promo__text"><p class="vv-promo__kicker">' + esc(PROMO.nadtitulek) + '</p>' +
-      '<h2 class="vv-promo__title">' + esc(PROMO.titulek) + '</h2>' +
+      '<h2 class="vv-promo__title">' + (PROMO.logo ? '<img src="' + PROMO.logo + '" alt="' + esc(PROMO.titulek) + '">' : esc(PROMO.titulek)) + '</h2>' +
       '<p class="vv-promo__date">' + esc(PROMO.datum) + '</p>' +
       '<p class="vv-promo__desc">' + esc(PROMO.text) + '</p>' +
       '<a class="vv-promo__btn" href="' + PROMO.odkaz + '" target="_blank" rel="noopener">' + esc(PROMO.tlacitko) + '</a></div>' +
