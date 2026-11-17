@@ -154,7 +154,7 @@
     datum: 'Od června 2027',
     text: 'Nová divadelní inscenace uváděná přímo ve vile. Termíny, obsazení a vstupenky najdete na webu představení.',
     tlacitko: 'Více o představení',
-    odkaz: 'https://nakolaudaci.cz'
+    odkaz: 'https://www.nakolaudaci.cz'
   };
   function promo() {
     var tipy = document.querySelector('.homepage-products-6');
