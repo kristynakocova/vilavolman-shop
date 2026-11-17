@@ -145,6 +145,77 @@
     nadpis.parentNode.insertBefore(el('div', 'vv-usp', html), nadpis);
   }
 
-  function init() { varianty(); recenze(); texty(); zalozky(); mockup(); usp(); }
+  /* ===== Promo blok Kolaudace: text vlevo, video vpravo (úvodní stránka) ===== */
+  var PROMO = {
+    video: 'https://cdn.jsdelivr.net/gh/kristynakocova/vilavolman-shop@ef963ffd71346a496db7407273ff0c3696d6929b/kolaudace.mp4',
+    poster: 'https://cdn.jsdelivr.net/gh/kristynakocova/vilavolman-shop@ef963ffd71346a496db7407273ff0c3696d6929b/kolaudace-poster.jpg',
+    nadtitulek: 'Divadlo ve Volmanově vile',
+    titulek: 'Kolaudace',
+    datum: 'Od června 2027',
+    text: 'Nová divadelní inscenace uváděná přímo ve vile. Termíny, obsazení a vstupenky najdete na webu představení.',
+    tlacitko: 'Více o představení',
+    odkaz: 'https://nakolaudaci.cz'
+  };
+  function promo() {
+    var tipy = document.querySelector('.homepage-products-6');
+    if (!tipy || document.querySelector('.vv-promo')) return;
+    var klid = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var sec = el('section', 'vv-promo',
+      '<div class="vv-promo__text"><p class="vv-promo__kicker">' + esc(PROMO.nadtitulek) + '</p>' +
+      '<h2 class="vv-promo__title">' + esc(PROMO.titulek) + '</h2>' +
+      '<p class="vv-promo__date">' + esc(PROMO.datum) + '</p>' +
+      '<p class="vv-promo__desc">' + esc(PROMO.text) + '</p>' +
+      '<a class="vv-promo__btn" href="' + PROMO.odkaz + '" target="_blank" rel="noopener">' + esc(PROMO.tlacitko) + '</a></div>' +
+      '<div class="vv-promo__media"><video muted loop playsinline preload="metadata"' + (klid ? '' : ' autoplay') +
+      ' poster="' + PROMO.poster + '" aria-label="Upoutávka na představení Kolaudace"><source src="' + PROMO.video + '" type="video/mp4"></video></div>');
+    sec.setAttribute('aria-label', PROMO.titulek);
+    tipy.parentNode.insertBefore(sec, tipy.nextSibling);
+  }
+
+  /* ===== Patička ve stylu webu vily ===== */
+  var PATICKA = {
+    menu: [
+      ['Návštěva vily', 'https://www.vilavolman.cz/prohlidky'],
+      ['Vstupenky', 'https://www.vilavolman.cz/vstupenky'],
+      ['Dárkové poukazy', '/darkove-poukazy/'],
+      ['Kontakty', 'https://www.vilavolman.cz/kontakt']
+    ],
+    nakup: [
+      ['Návštěvní řád', 'https://www.vilavolman.cz/volmanova-vila-navstevni-rad'],
+      ['Zásady ochrany osobních údajů', 'https://www.vilavolman.cz/cookie'],
+      ['Podmínky čerpání dárkových poukazů', 'https://www.vilavolman.cz/podminky-cerpani-darkovych-poukazu']
+    ]
+  };
+  var IKONY = {
+    facebook: '<path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/>',
+    linkedin: '<path d="M6.9 8.9H3.6V20h3.3V8.9zM5.3 3.5a1.9 1.9 0 1 0 0 3.8 1.9 1.9 0 0 0 0-3.8zM20.4 13.6c0-3-1.6-4.9-4.1-4.9-1.5 0-2.4.8-2.8 1.4V8.9h-3.2V20h3.3v-5.5c0-1.4.3-2.8 2-2.8s1.7 1.6 1.7 2.9V20h3.3l-.2-6.4z"/>',
+    instagram: '<path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.8a3.1 3.1 0 1 1 0-6.2 3.1 3.1 0 0 1 0 6.2zm4.9-8.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 3.6c2.3 0 2.5 0 3.4.1 2.3.1 3.4 1.2 3.5 3.5v6.8c-.1 2.3-1.2 3.4-3.5 3.5H8.6c-2.3-.1-3.4-1.2-3.5-3.5V7.2c.1-2.3 1.2-3.4 3.5-3.5H12zM12 2c-2.3 0-2.6 0-3.5.1C5.4 2.2 3.2 4.4 3.1 7.5 3 8.4 3 8.7 3 12s0 3.6.1 4.5c.1 3.1 2.3 5.3 5.4 5.4.9.1 1.2.1 3.5.1s2.6 0 3.5-.1c3.1-.1 5.3-2.3 5.4-5.4.1-.9.1-1.2.1-4.5s0-3.6-.1-4.5c-.1-3.1-2.3-5.3-5.4-5.4C14.6 2 14.3 2 12 2z"/>'
+  };
+  function paticka() {
+    var ft = document.querySelector('#footer');
+    var dole = ft && ft.querySelector('.footer-bottom');
+    if (!dole || document.querySelector('.vv-foot')) return;
+    var logo = document.querySelector('#header .site-name img');
+    var soc = [['facebook', 'https://www.facebook.com/vila.volman', 'Facebook'],
+               ['linkedin', 'https://www.linkedin.com/company/vila-volman/', 'LinkedIn'],
+               ['instagram', 'https://www.instagram.com/vila_volman/', 'Instagram']];
+    var html = '<div class="vv-foot__in">' +
+      (logo ? '<a class="vv-foot__logo" href="/"><img src="' + logo.src + '" alt="Vila Volman"></a>' : '') +
+      '<div class="vv-foot__social">' + soc.map(function (s) {
+        return '<a href="' + s[1] + '" target="_blank" rel="noopener" aria-label="' + s[2] + '"><svg viewBox="0 0 24 24" aria-hidden="true">' + IKONY[s[0]] + '</svg></a>';
+      }).join('') + '</div>' +
+      '<nav class="vv-foot__nav" aria-label="Vila Volman">' + PATICKA.menu.map(function (m) {
+        return '<a href="' + m[1] + '">' + esc(m[0]) + '</a>';
+      }).join('<span aria-hidden="true">|</span>') + '</nav>' +
+      '<div class="vv-foot__cols"><div><h3>Kontakt</h3>' +
+      '<p><a href="mailto:info@vilavolman.cz">info@vilavolman.cz</a><br><a href="tel:+420737870927">+420 737 870 927</a></p>' +
+      '<p>Vila Volman<br>Stankovského 1200/46, Čelákovice</p></div>' +
+      '<div><h3>Informace</h3><ul>' + PATICKA.nakup.map(function (m) {
+        return '<li><a href="' + m[1] + '">' + esc(m[0]) + '</a></li>';
+      }).join('') + '</ul></div></div></div>';
+    dole.parentNode.insertBefore(el('div', 'vv-foot', html), dole);
+  }
+
+  function init() { varianty(); recenze(); texty(); zalozky(); mockup(); usp(); promo(); paticka(); }
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', init) : init();
 })();

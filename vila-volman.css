@@ -315,3 +315,51 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
   .vv-usp svg { width: 30px; height: 30px; margin-top: 0; }
   .vv-usp strong { font-size: 15px; margin-bottom: 2px; }
 }
+
+/* ---------- Promo blok na úvodní stránce: text vlevo + video vpravo (jako Kunsthalle) ---------- */
+.vv-promo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 64px 0 8px; }
+.vv-promo__text { background: var(--vv-cerna); color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(32px, 5vw, 72px); aspect-ratio: 16 / 9; }
+.vv-promo__kicker { font-size: 12px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.65); margin: 0 0 18px; }
+.vv-promo__title { font-size: clamp(30px, 3.4vw, 52px) !important; line-height: 1 !important; font-weight: 300 !important; letter-spacing: .28em; text-transform: uppercase; margin: 0 0 14px !important; color: #fff !important; }
+.vv-promo__date { font-size: clamp(15px, 1.2vw, 18px); font-weight: 700; margin: 0 0 18px; color: #fff; }
+.vv-promo__desc { font-size: clamp(15px, 1.15vw, 17px); line-height: 1.55; font-weight: 300; margin: 0 0 30px; max-width: 32em; color: rgba(255,255,255,.85); }
+.vv-promo__btn { display: inline-block; border: 1px solid #fff; color: #fff !important; padding: 12px 24px; font-size: 15px; text-decoration: none !important; transition: background .2s, color .2s; }
+.vv-promo__btn:hover { background: #fff; color: var(--vv-cerna) !important; }
+.vv-promo__media { position: relative; min-height: 100%; overflow: hidden; background: var(--vv-cerna); }
+.vv-promo__media video, .vv-promo__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 767px) {
+  .vv-promo { grid-template-columns: 1fr; gap: 0; margin: 40px 0 0; }
+  .vv-promo__media { order: -1; aspect-ratio: 16 / 9; min-height: 0; }
+  .vv-promo__text { aspect-ratio: auto; padding: 32px 24px 36px; }
+}
+
+/* ---------- Patička ve stylu webu vily (tmavá), newsletter zůstává nad ní ---------- */
+#footer .custom-footer.elements-2 { display: none !important; }
+.vv-foot { background: var(--vv-cerna); color: #fff; margin-top: 48px; padding: 64px 20px 40px; }
+.vv-foot__in { max-width: 980px; margin: 0 auto; text-align: center; }
+.vv-foot__logo img { width: 110px; height: auto; filter: invert(1); display: inline-block; }
+.vv-foot__social { display: flex; justify-content: center; gap: 8px; margin: 24px 0 18px; }
+.vv-foot__social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.85); border-radius: 50% !important; display: inline-flex; align-items: center; justify-content: center; color: #fff !important; transition: background .2s, color .2s; }
+.vv-foot__social a:hover { background: #fff; color: var(--vv-cerna) !important; }
+.vv-foot__social svg { width: 15px; height: 15px; fill: currentColor; }
+.vv-foot__nav { font-size: 14px; font-weight: 700; margin: 0 0 56px; }
+.vv-foot__nav a { color: #fff !important; text-decoration: none; }
+.vv-foot__nav a:hover { text-decoration: underline; }
+.vv-foot__nav span { color: rgba(255,255,255,.5); margin: 0 6px; }
+.vv-foot__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 80px; text-align: left; }
+.vv-foot__cols h3 { color: #fff !important; font-size: 22px !important; font-weight: 700 !important; text-transform: none !important; letter-spacing: 0 !important; margin: 0 0 16px !important; }
+.vv-foot__cols p, .vv-foot__cols li { font-size: 14px !important; line-height: 1.7 !important; font-weight: 300 !important; color: rgba(255,255,255,.85) !important; margin: 0 0 12px !important; padding: 0 !important; }
+.vv-foot__cols li { margin: 0 !important; }
+.vv-foot__cols li::before { display: none !important; }
+.vv-foot__cols ul { list-style: none; margin: 0; padding: 0; }
+.vv-foot__cols a { color: #fff !important; text-decoration: none; }
+.vv-foot__cols a:hover { text-decoration: underline; }
+#footer .footer-bottom { background: var(--vv-cerna) !important; color: rgba(255,255,255,.7) !important; max-width: none !important; width: 100% !important; display: flex !important; flex-wrap: wrap; justify-content: center !important; align-items: center; gap: 8px 32px; text-align: center; padding: 20px !important; margin: 0 !important; border-top: 1px solid rgba(255,255,255,.12); font-size: 13px; }
+#footer .footer-bottom > * { position: static !important; float: none !important; margin: 0 !important; }
+#footer .footer-bottom a, #footer .footer-bottom .copyright { color: rgba(255,255,255,.7) !important; }
+#footer .footer-bottom-bg::before { display: none !important; }
+@media (max-width: 767px) {
+  .vv-foot { margin-top: 40px; padding: 48px 20px 32px; }
+  .vv-foot__nav { margin-bottom: 40px; line-height: 2; }
+  .vv-foot__cols { grid-template-columns: 1fr; gap: 36px; }
+}
