@@ -158,7 +158,7 @@
     poster: 'https://cdn.jsdelivr.net/gh/kristynakocova/vilavolman-shop@ef963ffd71346a496db7407273ff0c3696d6929b/kolaudace-poster.jpg',
     nadtitulek: 'Divadlo ve Volmanově vile',
     titulek: 'Kolaudace',
-    logo: 'https://static.wixstatic.com/media/b85c6b_86951e30d53d4140ab51707b96625dc1~mv2.png',
+    logo: 'https://cdn.jsdelivr.net/gh/kristynakocova/vilavolman-shop@e39ac44f7241d3ad980879ef741ccba78682db22/kolaudace.png',
     datum: 'Premiéra 6. června 2027',
     text: 'Imerzivní inscenace, ve které se hranice mezi divadlem a skutečností téměř vytrácí. Termíny a vstupenky najdete na webu představení.',
     tlacitko: 'Více o představení',
