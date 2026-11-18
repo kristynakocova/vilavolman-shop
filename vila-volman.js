@@ -164,20 +164,48 @@
     tlacitko: 'Více o představení',
     odkaz: 'https://www.nakolaudaci.cz'
   };
+  /* Kde se banner Kolaudace zobrazuje (podle tabulky). Homepage = výchozí texty z PROMO.
+     Pro kategorie: cesta = adresa kategorie, datum/text přepíšou výchozí. Smazáním řádku banner zmizí. */
+  var PROMO_TEXT_KAT = 'Divadelní zážitek, který vás přenese do světa první republiky. Vstupenky právě teď v prodeji.';
+  var PROMO_MISTA = [
+    { cesta: '/vanoce/',          datum: 'od června 2027', text: PROMO_TEXT_KAT },
+    { cesta: '/knihy-papir/',     datum: 'od června 2027', text: PROMO_TEXT_KAT },
+    { cesta: '/darkove-poukazy/', datum: 'od června 2027', text: PROMO_TEXT_KAT },
+    { cesta: '/cesky-design/',    datum: 'od června 2027', text: PROMO_TEXT_KAT },
+    { cesta: '/kulturni-akce/',   datum: 'od června 2027', text: PROMO_TEXT_KAT }
+  ];
   function promo() {
+    if (document.querySelector('.vv-promo')) return;
+    var za = null, pred = null, cfg = {};
     var tipy = document.querySelector('.homepage-products-6');
-    if (!tipy || document.querySelector('.vv-promo')) return;
+    if (tipy) { za = tipy; }
+    else if (document.body.classList.contains('type-category')) {
+      var cesta = location.pathname;
+      for (var i = 0; i < PROMO_MISTA.length; i++) {
+        var m = PROMO_MISTA[i];
+        if (cesta === m.cesta || cesta.indexOf(m.cesta + 'strana-') === 0) { cfg = m; break; }
+      }
+      if (!cfg.cesta) return;
+      pred = document.querySelector('#footer .custom-footer__newsletter');
+      if (!pred) za = document.querySelector('.category-content-wrapper .listingControls') || document.querySelector('#products');
+      if (!pred && !za) return;
+    } else return;
+    var p = {};
+    for (var k in PROMO) p[k] = PROMO[k];
+    for (var k2 in cfg) p[k2] = cfg[k2];
     var klid = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
     var sec = el('section', 'vv-promo',
-      '<div class="vv-promo__text"><p class="vv-promo__kicker">' + esc(PROMO.nadtitulek) + '</p>' +
-      '<h2 class="vv-promo__title">' + (PROMO.logo ? '<img src="' + PROMO.logo + '" alt="' + esc(PROMO.titulek) + '">' : esc(PROMO.titulek)) + '</h2>' +
-      '<p class="vv-promo__date">' + esc(PROMO.datum) + '</p>' +
-      '<p class="vv-promo__desc">' + esc(PROMO.text) + '</p>' +
-      '<a class="vv-promo__btn" href="' + PROMO.odkaz + '" target="_blank" rel="noopener">' + esc(PROMO.tlacitko) + '</a></div>' +
+      '<div class="vv-promo__text"><p class="vv-promo__kicker">' + esc(p.nadtitulek) + '</p>' +
+      '<h2 class="vv-promo__title">' + (p.logo ? '<img src="' + p.logo + '" alt="' + esc(p.titulek) + '">' : esc(p.titulek)) + '</h2>' +
+      '<p class="vv-promo__date">' + esc(p.datum) + '</p>' +
+      '<p class="vv-promo__desc">' + esc(p.text) + '</p>' +
+      '<a class="vv-promo__btn" href="' + p.odkaz + '" target="_blank" rel="noopener">' + esc(p.tlacitko) + '</a></div>' +
       '<div class="vv-promo__media"><video muted loop playsinline preload="metadata"' + (klid ? '' : ' autoplay') +
-      ' poster="' + PROMO.poster + '" aria-label="Upoutávka na představení Kolaudace"><source src="' + PROMO.video + '" type="video/mp4"></video></div>');
-    sec.setAttribute('aria-label', PROMO.titulek);
-    tipy.parentNode.insertBefore(sec, tipy.nextSibling);
+      ' poster="' + p.poster + '" aria-label="Upoutávka na představení Kolaudace"><source src="' + p.video + '" type="video/mp4"></video></div>');
+    sec.setAttribute('aria-label', p.titulek);
+    if (cfg.cesta) sec.classList.add('vv-promo--kat');
+    if (pred) pred.parentNode.insertBefore(sec, pred);
+    else za.parentNode.insertBefore(sec, za.nextSibling);
   }
 
   /* ===== Patička ve stylu webu vily ===== */
