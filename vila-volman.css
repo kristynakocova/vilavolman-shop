@@ -343,7 +343,8 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 .vv-foot__social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.85); border-radius: 50% !important; display: inline-flex; align-items: center; justify-content: center; color: #fff !important; transition: background .2s, color .2s; }
 .vv-foot__social a:hover { background: #fff; color: var(--vv-cerna) !important; }
 .vv-foot__social svg { width: 15px; height: 15px; fill: currentColor; }
-.vv-foot__nav { font-size: 14px; font-weight: 700; margin: 0 0 56px; }
+.vv-foot { overflow-x: clip; }
+.vv-foot__nav { font-size: 14px; font-weight: 700; margin: 0 0 56px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: 4px; }
 .vv-foot__nav a { color: #fff !important; text-decoration: none; white-space: nowrap; }
 .vv-foot__nav a:hover { text-decoration: underline; }
 .vv-foot__nav span { color: rgba(255,255,255,.5); margin: 0 6px; }
@@ -361,6 +362,7 @@ body, .overall-wrapper, #header, .content-wrapper, #footer, .footer.is-white { b
 #footer .footer-bottom-bg::before { display: none !important; }
 @media (max-width: 767px) {
   .vv-foot { margin-top: 40px; padding: 48px 20px 32px; }
-  .vv-foot__nav { margin-bottom: 40px; line-height: 2; }
+  .vv-foot__nav { margin-bottom: 40px; line-height: 2; column-gap: 22px; row-gap: 2px; }
+  .vv-foot__nav span { display: none; }
   .vv-foot__cols { grid-template-columns: 1fr; gap: 36px; }
 }
